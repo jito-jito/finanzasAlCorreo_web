@@ -1,1 +1,608 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: "Inter";
+  src:
+    url("/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 100 900;              
+  font-style: oblique 0deg 10deg;    
+  font-display: swap;                
+}
+
+@font-face{
+  font-family: "Playfair_Display";
+  src:
+    url("/assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;              
+  font-style: oblique 0deg 10deg;    
+  font-display: swap;                
+}
+
+@font-face{
+  font-family: "Source_Serif_4";
+  src:
+    url("/assets/fonts/Source_Serif_4/SourceSerif4-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 100 900;              
+  font-style: oblique 0deg 10deg;    
+  font-display: swap;                
+}
+
+.fn-type-inter { 
+    font-family: var(--font-inter); 
+    font-weight: 400; 
+}
+
+.fn-type-playfair {
+    font-family: var(--font-playfair); 
+    font-weight: 400; 
+}
+
+.fn-type-source_serif {
+    font-family: var(--font-source_serif); 
+    font-weight: 400; 
+}
+
+/* variables */
+
+:root{
+    --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; 
+    --font-playfair: "Playfair_Display", Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-source_serif: "Source_Serif_4", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* ----------------------- */
+
+body {
+  min-height: 100dvh;
+  background: #e2e8f0 !important;
+}
+
+/* component styles */
+/* button - transparent */
+.ui-btn-transparent {
+  background-color: transparent;
+  border: 1px solid #d1d5dc !important;
+}
+
+.ui-btn-transparent:hover {
+  background-color: #e4e4e4 !important;
+}
+
+/* button - app primary */
+.ui-btn-primary {
+  background-color: #193cb8 !important;
+  color: #ffffff !important;
+  border: 1px solid #193cb8 !important;
+}
+
+.ui-btn-primary:hover {
+  background-color: #13319b !important;
+}
+
+/* button - outline */
+.ui-btn-outline {
+  background-color: transparent;
+  border: none !important;
+}
+
+.ui-btn-outline:hover {
+  background-color: transparent !important;
+}
+
+.ui-btn-outline-primary {
+  font-family: var(--font-inter) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #193cb8 !important;
+}
+
+.ui-btn-outline-primary:hover {
+  background-color: transparent !important;
+  color: #13319b !important;
+}
+
+
+.ui-btn-outline-like {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  font-family: var(--font-inter) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #4a5565 !important;
+}
+
+.ui-btn-outline-like svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.ui-btn-outline-like:hover {
+  background-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+/* card - select repot day */
+
+.ui-card {
+  background: white;
+  border: 2px solid #d1d5dc;
+  border-radius: 0px;
+}
+
+.ui-card .title {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+}
+
+.ui-card .subtitle {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* card - report */
+
+.ui-card-report {
+  background: white;
+  border: 1px solid #d1d5dc;
+  border-radius: 8px;
+  border-left: 4px solid #193cb8;
+}
+
+.ui-card-report h1 {
+  font-family: var(--font-playfair);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.ui-card-report p.subtitle{
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 500;
+  color: #6a7282;
+}
+
+.ui-card-report p{
+  font-family: var(--font-source_serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: #364153;
+}
+
+/* card - analysis */
+.ui-card-analysis {
+  background: white;
+  border: 1px solid #d1d5dc;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  /* border-left: 4px solid #193cb8; */
+}
+
+.ui-card-analysis:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+}
+.ui-card-analysis span {
+  padding: 8px;
+  border-radius: 4px;
+  background: #dbeafe;
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 500;
+  color: #193cb8;
+}
+
+
+.ui-card-analysis h1 {
+  font-family: var(--font-playfair);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.ui-card-analysis p.subtitle{
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 500;
+  color: #6a7282;
+}
+
+.ui-card-analysis p{
+  font-family: var(--font-source_serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: #364153;
+}
+
+
+/* card - indicator */
+
+.ui-card-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border: 2px solid #d1d5dc;
+  border-radius: 8px;
+  max-width: 300px;
+  min-height: 260px;
+}
+
+.ui-card-indicator h1 {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 18px;
+  color: #101828;
+}
+
+.ui-card-indicator h2 {
+  font-family: var(--font-inter);
+  font-size: 30px;
+  font-weight: 700;
+  color: #193cb8;
+}
+
+.ui-card-indicator p {
+  font-family: var(--font-source_serif);
+  font-size: 14px;
+  color: #4a5565;
+}
+
+
+/* card - mission */
+.ui-card-mission {
+  background: white;
+  border: 2px solid #d1d5dc;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.ui-card-mission > h1 {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 2px solid #193cb8;
+
+}
+
+.ui-card-mission .description {
+  font-family: var(--font-source_serif);
+  font-size: 18px;
+  color: #364153;
+}
+
+.ui-card-mission .card-quote {
+  margin-top: 16px;
+  padding: 20px;
+  border-left: 4px solid #193cb8;
+  background: #f0f4ff;
+  border-radius: 6px;
+}
+
+.ui-card-mission .card-quote h1 {
+  font-family: var(--font-playfair);
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+}
+
+.ui-card-mission .card-quote p {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5565;
+  margin: 0;
+}
+
+/* card - value */
+.ui-card-value {
+  background: white;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.ui-card-value h1 {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ui-card-value p {
+  font-family: var(--font-source_serif);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* card - contact */
+.ui-card-contact {
+  background: white;
+  border: 2px solid #d1d5dc;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+
+.ui-card-contact h1 {
+  font-family: var(--font-playfair);
+  font-size: 24px;
+  color: #101828;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ui-card-contact p {
+  font-family: var(--font-source_serif);
+  font-size: 16px;
+  color: #364153;
+  text-align: center;
+
+}
+
+.ui-card-contact .ui-card-contact-item > .contact-item-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  background: #e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.ui-card-contact .ui-card-contact-item > .contact-item-img svg {
+  width: 32px;
+  height: 32px;
+  color: #193cb8;
+
+}
+
+/* ui card form */
+.ui-card-form {
+  background: white;
+  border: 2px solid #d1d5dc;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+
+}
+
+.ui-card-forgot-password {
+  max-width: 500px;
+}
+
+.ui-card-form h1 {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 16px;
+  color: #101828;
+}
+
+.ui-card-form p {
+  font-family: var(--font-source_serif);
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #4a5565;
+}
+
+.ui-card-form label {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #364153;
+}
+
+.ui-card-form .link {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  color: #193cb8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ui-card-form .link:hover {
+  text-decoration: underline;
+}
+
+.ui-card-form .register-text {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  color: #4a5565;
+}
+
+.ui-card-form .contact-item-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  background: #e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-card-form .contact-item-img svg{
+  width: 32px;
+  height: 32px;
+  color: #193cb8;
+}
+
+/* ui card report details */
+.ui-card-report-back-btn {
+  background-color: white !important;
+}
+
+.ui-card-report-details {
+  background: white;
+  border: 2px solid #d1d5dc;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.ui-card-report-details .tag {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  color: white;
+  background: #193cb8;
+  text-transform: uppercase;
+}
+
+.ui-card-report-details h1 {
+  font-family: var(--font-playfair);
+  font-size: 32px;
+  font-weight: 700;
+  color: #101828;
+  
+}
+
+.ui-card-report-details .subtitle {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  color: #4a5565;
+
+}
+
+.ui-card-report-details .subtitle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ui-card-report-details hr {
+  border: 1px solid #193cb8;
+  opacity: 1;
+}
+
+.ui-card-report-details .content {
+  font-family: var(--font-source_serif);
+  font-size: 18px;
+  line-height: 24px;
+  color: #4a5565;
+}
+
+.ui-card-report-details .line-footer {
+  border: 1px solid #d1d5dc;
+  opacity: 1;
+}
+
+.ui-card-report-details .likes-btns {
+  color:  #4a5565;
+  font-size: 14px;
+}
+
+/* header styles */
+.ui-header {
+  background: white;
+}
+
+.ui-nav-link {
+  font-family: var(--font-inter);
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.ui-line-bottom {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+/* main content styles */
+
+.ui-main-container {
+  /* background: #e2e8f0; */
+  /* min-height: 100%; */
+}
+
+.ui-main h1 {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 30px;
+
+  background: transparent;
+}
+
+.ui-main-content-section h1 {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 30px;
+
+  background: transparent;
+}
+
+.ui-main-content-section p {
+  font-family: var(--font-source_serif);
+  font-weight: 400;
+  font-size: 18px;
+
+  background: transparent;
+}
+
+
+.ui-main-content-section hr {
+  border: 1px solid #193cb8;
+  opacity: 1;
+}
+
+
+/* footer component styles */
+.ui-footer {
+  background-color: #1e2939;
+}
+
+.ui-footer hr {
+  border: 2px solid #193cb8;
+  opacity: 1;
+}
+.ui-footer h1 {
+  font-family: var(--font-playfair);
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ui-footer p.subtitle {
+  font-family: var(--font-source_serif);
+  font-size: 16px;
+  color: #d1d5dc;
+}
+
+.ui-footer p {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  color: #99a1af;
+
+}
+
+/* helpers */
+
+.gap-6 {
+  gap: 6px !important;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.w-max-content {
+  width: max-content;
+}
+
+@media (min-width: 992px) {
+  .w-lg-max-content {
+    width: max-content;
+  }
+}
