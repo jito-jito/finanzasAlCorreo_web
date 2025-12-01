@@ -1,11 +1,53 @@
-<header>
-    header
+<!-- header -->
+<header class="pt-4 ui-header">
+    <p class="text-center fn-type-inter m-0 mb-2" id="header-date">Tuesday, September 2, 2025</p>
+    <h1 class="text-center fn-type-playfair m-0">Finanzas al correo</h1>
+    <p class="text-center fn-type-source_serif m-0">Tu resumen diario sobre criptomonedas</p>
+    <hr class="mx-4">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container app-header-navContainer align-items-center justify-content-center">
+
+            <!-- BOTÓN HAMBURGUESA (solo visible en pantallas pequeñas) -->
+            <button class="app-header-navBtn navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- MENÚ DE NAVEGACIÓN -->
+            <div class="collapse navbar-collapse app-header-nav align-items-center justify-content-center"
+                id="navbarNav">
+                <ul class="navbar-nav mt-3 mt-lg-0">
+                    <li class="nav-item container"><a class="ui-nav-link nav-link text-center"
+                            routerLink="/">Inicio</a></li>
+                    <li class="nav-item container"><a class="nav-link text-center" routerLink="/analisis">Análisis</a>
+                    </li>
+                    <li class="nav-item container"><a class="nav-link text-center w-lg-max-content"
+                            routerLink="/sobre-la-app">Sobre la app</a></li>
+                    <div id="session-navbarNav" class="d-flex flex-column flex-lg-row justify-content-between">
+                        <li class="nav-item container mb-2 mb-lg-0"><button
+                                class="w-100 btn ui-btn-transparent ui-nav-link" (click)="goToLogin()">Login</button>
+                        </li>
+                        <li class="nav-item container"><button class="w-100 btn ui-btn-primary ui-nav-link"
+                                (click)="goToRegister()">Registro</button></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <hr class="ui-line-bottom mb-0">
 </header>
 
-<main>
-    <router-outlet></router-outlet>
-</main>
 
-<footer>
-    footer
+<router-outlet></router-outlet>
+
+
+<!-- footer -->
+<footer class="ui-footer">
+    <hr>
+    <h1 class="text-center pt-4">Finanzas al Correo</h1>
+    <p class="text-center subtitle">Tu fuente confiable de noticias y análisis sobre criptomonedas</p>
+
+    <p class="mb-0 text-center pb-4">© 2025 Finanzas al Correo. Todos los derechos reservados.</p>
 </footer>

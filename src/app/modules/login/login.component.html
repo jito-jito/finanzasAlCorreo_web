@@ -1,1 +1,31 @@
-<p>login works!</p>
+<main class="ui-main-container py-5">
+    <section class="container d-flex align-items-center justify-content-center">
+        <form action="" id="form-login">
+            <div class="ui-card-form">
+                <h1>Bienvenido</h1>
+                <p class="mb-md-4">Inicia sesión en tu cuenta de Finanzas al Correo.</p>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
+
+                <div class="mb-3">
+                    <div
+                        class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
+                        <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                        <a href="/forgot-password.html" class="m-0 link">
+                            Olvidaste tu contraseña?
+                        </a>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="********">
+                </div>
+
+                <button class="w-100 btn ui-btn-primary ui-nav-link" type="submit">Login</button>
+
+                <p class="register-text text-center my-2 mt-4 mt-md-5">No tienes una cuenta? <br class="d-sm-none"><a
+                        href="/register.html" class="link">Regístrate aquí</a>.</p>
+            </div>
+        </form>
+    </section>
+</main>

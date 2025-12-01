@@ -1,1 +1,54 @@
-<p>analysis works!</p>
+<main class="ui-main-container py-5">
+    <section class="container">
+        @if (!error) {
+        <div class="ui-main-content-section pb-2">
+            <h1 class="text-center">Análisis y Reportes</h1>
+            <p class="text-center">Análisis en profundidad, informes técnicos y comentarios de expertos sobre los
+                mercados de criptomonedas, <br> la tecnología blockchain y las tendencias emergentes.</p>
+        </div>
+
+        <div class="my-4 d-flex flex-wrap align-items-center justify-content-center gap-16">
+            @if (!loading && data) {
+            @for (metric of data.metricsItems; track $index) {
+            <div class="ui-card-indicator p-4">
+                <h1>{{ metric.title }}</h1>
+                <h2>{{ metric.summary }}</h2>
+                <p>{{ metric.description }}</p>
+            </div>
+            }
+            } @else if (loading) {
+            <p>Cargando métricas...</p>
+            }
+        </div>
+
+        <div class="ui-main-content-section my-4 pt-2">
+            <h1 class="text-center">últimos Reportes y análisis</h1>
+        </div>
+
+        <div class="row gap-16 justify-content-center">
+            @if (!loading && data) {
+            @for (analysis of data.analysisItems; track $index) {
+            <div class="col-12 col-lg-5">
+                <div class="ui-card-analysis p-4">
+                    <span>{{analysis.type}}</span>
+                    <h1 class="mt-3">{{analysis.title}}</h1>
+                    <p class="subtitle">{{analysis.date}}</p>
+                    <p>{{analysis.content}}</p>
+                    <hr>
+                    <div class="d-flex justify-content-between" id="home-analysis-card-details">
+                        <button (click)="goToAnalysisDetails(analysis.id)"
+                            class="btn ui-btn-outline ui-btn-outline-primary">LEER ANALISIS COMPLETO →</button>
+                    </div>
+
+                </div>
+            </div>
+            }
+            } @else if (loading) {
+            <p class="text-center">Cargando análisis...</p>
+            }
+        </div>
+
+        }
+
+    </section>
+</main>

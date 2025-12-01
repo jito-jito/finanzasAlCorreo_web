@@ -1,1 +1,57 @@
-<p>register works!</p>
+<main class="ui-main-container py-5">
+    <section class="container d-flex align-items-center justify-content-center">
+        <form action="" id="form-registro">
+            <div class="ui-card-form">
+                <h1>Crear cuenta</h1>
+                <p class="mb-md-4">Únete a Finanzas al correo para acceder a funciones exclusivas.</p>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Juan Pérez">
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" placeholder="Juan Pérez">
+                    <div class="invalid-feedback">Debes ingresar un nombre de usuario.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <div class="invalid-feedback">Debes ingresar un correo válido.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Confirmar Correo</label>
+                    <input type="email" class="form-control" id="confirmarEmail" placeholder="name@example.com">
+                    <div class="invalid-feedback">Las correos no coinciden.</div>
+                </div>
+
+                <div class="mb-3">
+                    <div
+                        class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
+                        <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="********">
+                    <div class="invalid-feedback">Debe tener mínimo 8 caracteres, 1 número y 1 mayúscula.</div>
+                </div>
+
+                <div class="mb-3">
+                    <div
+                        class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
+                        <label for="exampleFormControlInput1" class="form-label">Confirmar Contraseña</label>
+                    </div>
+                    <input type="password" class="form-control" id="confirmarPassword" placeholder="********">
+                    <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                </div>
+
+                <button class="w-100 btn ui-btn-primary ui-nav-link" type="submit">Crear cuenta</button>
+
+                <p class="register-text text-center my-2 mt-4 mt-md-5">Ya tienes una cuenta? <br class="d-sm-none"><a
+                        href="/login.html" class="link">Inicia sesión aquí</a>.</p>
+            </div>
+        </form>
+    </section>
+</main>
