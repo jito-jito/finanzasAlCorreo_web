@@ -1,32 +1,47 @@
+@let formFullName = form.get('fullName');
+@let formAlias = form.get('alias');
+@let formEmail = form.get('email');
+@let formConfirmEmail = form.get('confirmEmail');
+@let formPassword = form.get('password');
+@let formConfirmPassword = form.get('confirmPassword');
+
 <main class="ui-main-container py-5">
     <section class="container d-flex align-items-center justify-content-center">
-        <form action="" id="form-registro">
+        <form [formGroup]="form" (ngSubmit)="sendForm()" id="form-registro">
             <div class="ui-card-form">
                 <h1>Crear cuenta</h1>
                 <p class="mb-md-4">Únete a Finanzas al correo para acceder a funciones exclusivas.</p>
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Juan Pérez">
-                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <input formControlName="fullName" type="text" class="form-control" id="nombre" placeholder="Juan Pérez">
+                    @if ((formFullName?.errors?.['required'] || formFullName?.errors?.['minlength']) && formFullName?.touched) {
+                        <div class="invalid-feedback d-block">Este campo es obligatorio, mínimo 6 caracteres.</div>
+                    }
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" placeholder="Juan Pérez">
-                    <div class="invalid-feedback">Debes ingresar un nombre de usuario.</div>
+                    <input formControlName="alias" type="text" class="form-control" id="usuario" placeholder="Juanito">
+                    @if ((formAlias?.errors?.['required'] || formAlias?.errors?.['minlength']) && formAlias?.touched) {
+                        <div class="invalid-feedback d-block">Debes ingresar un nombre de usuario, mínimo 3 caracteres.</div>
+                    }
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                    <div class="invalid-feedback">Debes ingresar un correo válido.</div>
+                    <input formControlName="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                    @if (formEmail?.errors && formEmail?.touched) {
+                        <div class="invalid-feedback d-block">Debes ingresar un correo válido.</div>
+                    }
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Confirmar Correo</label>
-                    <input type="email" class="form-control" id="confirmarEmail" placeholder="name@example.com">
-                    <div class="invalid-feedback">Las correos no coinciden.</div>
+                    <input formControlName="confirmEmail" type="email" class="form-control" id="confirmarEmail" placeholder="name@example.com">
+                    @if (form.errors?.['emailsDoNotMatch'] && formConfirmEmail?.touched) {
+                        <div class="invalid-feedback d-block">Las correos no coinciden.</div>
+                    }
                 </div>
 
                 <div class="mb-3">
@@ -34,8 +49,10 @@
                         class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
                         <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
                     </div>
-                    <input type="password" class="form-control" id="password" placeholder="********">
-                    <div class="invalid-feedback">Debe tener mínimo 8 caracteres, 1 número y 1 mayúscula.</div>
+                    <input formControlName="password" type="password" class="form-control" id="password" placeholder="********">
+                    @if (formPassword?.errors && formPassword?.touched) {
+                        <div class="invalid-feedback d-block">Debe tener mínimo 8 caracteres, 1 número y 1 mayúscula.</div>
+                    }
                 </div>
 
                 <div class="mb-3">
@@ -43,14 +60,21 @@
                         class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
                         <label for="exampleFormControlInput1" class="form-label">Confirmar Contraseña</label>
                     </div>
-                    <input type="password" class="form-control" id="confirmarPassword" placeholder="********">
-                    <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                    <input formControlName="confirmPassword" type="password" class="form-control" id="confirmarPassword" placeholder="********">
+                    @if (form.errors?.['passwordsDoNotMatch'] && formConfirmPassword?.touched) {
+                        <div class="invalid-feedback d-block">Las contraseñas no coinciden.</div>
+                    }
                 </div>
 
-                <button class="w-100 btn ui-btn-primary ui-nav-link" type="submit">Crear cuenta</button>
+                <button class="w-100 btn ui-btn-primary ui-nav-link" type="submit">
+                    Crear cuenta
+                </button>
+                @if (loading) {
+                  <em class="text-center">Cargando...</em>
+                }
 
                 <p class="register-text text-center my-2 mt-4 mt-md-5">Ya tienes una cuenta? <br class="d-sm-none"><a
-                        href="/login.html" class="link">Inicia sesión aquí</a>.</p>
+                        routerLink="/login" class="link">Inicia sesión aquí</a>.</p>
             </div>
         </form>
     </section>

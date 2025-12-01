@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AnalysisApiService } from './services/analysis-api.service';
 import { AnalysisData } from './models/analysis.model';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/auth/auth.service';
 
 @Component({
   selector: 'app-analysis',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   standalone: true,
 })
 export class AnalysisComponent {
+  authService = inject(AuthService);
   analysisApiService = inject(AnalysisApiService);
   router = inject(Router);
   data!: AnalysisData;

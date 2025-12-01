@@ -1,3 +1,5 @@
+@let isAuthenticated = authService.isAuthenticated();
+
 <main class="ui-main-container py-5">
     <section class="container">
         @if (!error) {
@@ -36,8 +38,13 @@
                     <p>{{analysis.content}}</p>
                     <hr>
                     <div class="d-flex justify-content-between" id="home-analysis-card-details">
+                        @if (isAuthenticated) {
                         <button (click)="goToAnalysisDetails(analysis.id)"
                             class="btn ui-btn-outline ui-btn-outline-primary">LEER ANALISIS COMPLETO →</button>
+
+                        } @else {
+                        <em>Inicia sesión para ver más detalles...</em>
+                        }
                     </div>
 
                 </div>

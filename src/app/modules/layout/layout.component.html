@@ -1,6 +1,9 @@
+@let isAuthenticated = authService.isAuthenticated();
+@let userSession = authService.userSession.value;
+
 <!-- header -->
 <header class="pt-4 ui-header">
-    <p class="text-center fn-type-inter m-0 mb-2" id="header-date">Tuesday, September 2, 2025</p>
+    <p class="text-center fn-type-inter m-0 mb-2" id="header-date">{{currentDate}}</p>
     <h1 class="text-center fn-type-playfair m-0">Finanzas al correo</h1>
     <p class="text-center fn-type-source_serif m-0">Tu resumen diario sobre criptomonedas</p>
     <hr class="mx-4">
@@ -18,18 +21,25 @@
             <div class="collapse navbar-collapse app-header-nav align-items-center justify-content-center"
                 id="navbarNav">
                 <ul class="navbar-nav mt-3 mt-lg-0">
-                    <li class="nav-item container"><a class="ui-nav-link nav-link text-center"
-                            routerLink="/">Inicio</a></li>
+                    <li class="nav-item container"><a class="ui-nav-link nav-link text-center" routerLink="/">Inicio</a>
+                    </li>
                     <li class="nav-item container"><a class="nav-link text-center" routerLink="/analisis">Análisis</a>
                     </li>
                     <li class="nav-item container"><a class="nav-link text-center w-lg-max-content"
                             routerLink="/sobre-la-app">Sobre la app</a></li>
                     <div id="session-navbarNav" class="d-flex flex-column flex-lg-row justify-content-between">
+                        @if(isAuthenticated) {
+                        <li class="nav-item container mb-2 mb-lg-0"><span
+                                class="nav-link text-center w-lg-max-content ">Hola, {{userSession?.alias}}!</span></li>
+                        <li class="nav-item container"><button class="w-100 btn ui-btn-primary ui-nav-link"
+                                (click)="authService.logout()">Logout</button></li>
+                        } @else {
                         <li class="nav-item container mb-2 mb-lg-0"><button
                                 class="w-100 btn ui-btn-transparent ui-nav-link" (click)="goToLogin()">Login</button>
                         </li>
                         <li class="nav-item container"><button class="w-100 btn ui-btn-primary ui-nav-link"
                                 (click)="goToRegister()">Registro</button></li>
+                        }
                     </div>
                 </ul>
             </div>

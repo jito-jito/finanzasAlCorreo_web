@@ -1,3 +1,5 @@
+@let isAuthenticated = authService.isAuthenticated();
+
 <main class="ui-main-container py-5">
     <section class="container">
 
@@ -21,12 +23,13 @@
                     </div>
 
                     <div class="d-flex align-items-center gap-10 mt-3 mt-md-0" id="home-report-selector">
+                        @if (isAuthenticated) {
                         <button class="btn ui-btn-transparent ui-nav-link" type="submit">
-                            < Día anterior 
-                        </button>
-                        <button class="w-max-content btn ui-btn-transparent ui-nav-link" type="submit">Siguiente
-                            día >
-                        </button>
+                            < Día anterior </button>
+                                <button class="w-max-content btn ui-btn-transparent ui-nav-link" type="submit">Siguiente
+                                    día >
+                                </button>
+                                }
                     </div>
                 </div>
 
@@ -45,10 +48,11 @@
                         <p>{{report.content}}</p>
                         <hr>
                         <div class="d-flex justify-content-between" id="home-report-card-details">
-                            <button class="btn ui-btn-outline ui-btn-outline-primary" (click)="openReportDetails(report.id)">CONTINUA LEYENDO →</button>
+                            @if (isAuthenticated) {
+                            <button class="btn ui-btn-outline ui-btn-outline-primary"
+                                (click)="openReportDetails(report.id)">CONTINUA LEYENDO →</button>
 
                             <div class="d-flex">
-
                                 <button class="btn ui-btn-outline ui-btn-outline-like">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -75,7 +79,10 @@
                                     <span>{{report.dislikes}}</span>
                                 </button>
                             </div>
-                        </div>
+                        } @else {
+                            <em>Inicia sesión para ver más detalles...</em>
+                        }
+                         </div>
 
                     </div>
 

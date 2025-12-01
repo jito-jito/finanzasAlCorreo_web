@@ -1,13 +1,13 @@
 <main class="ui-main-container py-5">
     <section class="container d-flex align-items-center justify-content-center">
-        <form action="" id="form-login">
+        <form [formGroup]="form" (ngSubmit)="sendForm()" id="form-login">
             <div class="ui-card-form">
                 <h1>Bienvenido</h1>
                 <p class="mb-md-4">Inicia sesión en tu cuenta de Finanzas al Correo.</p>
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
                 </div>
 
                 <div class="mb-3">
@@ -18,10 +18,13 @@
                             Olvidaste tu contraseña?
                         </a>
                     </div>
-                    <input type="password" class="form-control" id="password" placeholder="********">
+                    <input type="password" class="form-control" id="password" placeholder="********" formControlName="password">
                 </div>
 
                 <button class="w-100 btn ui-btn-primary ui-nav-link" type="submit">Login</button>
+                @if (error) {
+                    <div class="invalid-feedback d-block text-center">Hubo un error al iniciar sesión, intenta nuevamente más tarde.</div>
+                }
 
                 <p class="register-text text-center my-2 mt-4 mt-md-5">No tienes una cuenta? <br class="d-sm-none"><a
                         href="/register.html" class="link">Regístrate aquí</a>.</p>
