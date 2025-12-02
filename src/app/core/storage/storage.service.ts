@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 
+/**
+ * @description
+ * Servicio de almacenamiento para gestionar datos en el almacenamiento local del navegador.
+ * Proporciona métodos para establecer, obtener, eliminar y limpiar elementos del almacenamiento local.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

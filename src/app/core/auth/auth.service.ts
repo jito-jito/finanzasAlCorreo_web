@@ -3,6 +3,21 @@ import { BehaviorSubject } from 'rxjs';
 import { User } from './auth.model';
 import { StorageService } from '../storage/storage.service';
 
+/**
+ * @description
+ * Servicio de autenticación para gestionar el inicio de sesión,
+ * cierre de sesión y registro de usuarios.
+ * 
+ * Utiliza BehaviorSubject para mantener el estado de la sesión del usuario
+ * y StorageService para almacenar y recuperar datos de usuarios.
+ */
+
+/**
+ * @usageNotes
+ * Utilice este servicio para autenticar usuarios en la aplicación y validar si están logueados para acceder a ciertas rutas o funcionalidades.
+ * 
+ */
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,10 +27,27 @@ export class AuthService {
 
   constructor() { }
 
+  /**
+   * Verifica si hay un usuario autenticado en la sesión.
+   * 
+   * Utilizado para proteger rutas y funcionalidades que requieren autenticación.
+   * 
+   * @returns true si hay un usuario autenticado, false en caso contrario.
+   */
   isAuthenticated(): boolean {
     return this.userSession.value !== null;
   }
 
+  /**
+   * Recibe las credenciales del usuario y verifica si son correctas.
+   * 
+   * Retorna true si las credenciales son válidas y establece la sesión del usuario.
+   * Lanza un error si las credenciales son incorrectas.
+   * 
+   * @param email 
+   * @param password 
+   * @returns 
+   */
   login(email: string, password: string): boolean {
     const currentUser = this.getUsers().find((user: User) => user.email === email && user.password === password);
     

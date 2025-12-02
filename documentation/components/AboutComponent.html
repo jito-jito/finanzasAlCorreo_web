@@ -1,0 +1,430 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>finanzas-al-correo-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">finanzas-al-correo-web documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AboutComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/about/about.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-about</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./about.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./about.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-about&#x27;,
+  imports: [],
+  templateUrl: &#x27;./about.component.html&#x27;,
+  styleUrl: &#x27;./about.component.scss&#x27;,
+  standalone: true,
+})
+export class AboutComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;ui-main-container py-5&quot;&gt;
+    &lt;section class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;ui-main-content-section pb-2&quot;&gt;
+            &lt;h1 class&#x3D;&quot;text-center&quot;&gt;Sobre la app&lt;/h1&gt;
+            &lt;p class&#x3D;&quot;text-center&quot;&gt;Creado en 2025, Finanzas al correo nace de la necesidad de proporcionar
+                información
+                clara y precisa sobre el mundo de las criptomonedas. Nuestro equipo de expertos se dedica a
+                analizar las tendencias del mercado, ofrecer reportes detallados y brindar asesoramiento confiable
+                para ayudar a nuestros lectores a tomar decisiones informadas en este dinámico sector financiero.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;ui-card-mission mt-4 p-4 px-5 pb-5 pb-lg-4&quot;&gt;
+            &lt;h1 class&#x3D;&quot;text-center&quot;&gt;La Misión&lt;/h1&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 col-lg-7&quot;&gt;
+                    &lt;p class&#x3D;&quot;description my-3&quot;&gt;We believe that informed decision-making requires access to
+                        reliable, comprehensive information. In the fast-moving world of cryptocurrency,
+                        misinformation can lead to significant financial losses and missed opportunities.
+                        &lt;br&gt;
+                        &lt;br&gt;
+                        Our commitment is to cut through the noise and deliver the insights that matter most to
+                        investors, developers, and enthusiasts in the cryptocurrency ecosystem.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-12 col-lg-5&quot;&gt;
+                    &lt;div class&#x3D;&quot;h-100 d-flex align-items-center justify-content-center&quot;&gt;
+                        &lt;div class&#x3D;&quot;card-quote&quot;&gt;
+                            &lt;h1&gt;&quot;Empoderando a la comunidad cripto a través del periodismo transparente, preciso y
+                                educativo.&quot;&lt;/h1&gt;
+                            &lt;p&gt;— Junta Editorial de CryptoPulse&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class&#x3D;&quot;ui-main-content-section pb-2 mt-5&quot;&gt;
+            &lt;h1 class&#x3D;&quot;text-center&quot;&gt;Our Core Values&lt;/h1&gt;
+            &lt;p class&#x3D;&quot;text-center&quot;&gt;These principles guide every article we publish and every analysis we conduct.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;d-flex align-items-center flex-row flex-wrap justify-content-center gap-16&quot;&gt;
+            &lt;div class&#x3D;&quot;ui-card-value&quot;&gt;
+                &lt;h1&gt;Transparencia&lt;/h1&gt;
+                &lt;p&gt;Creemos en la importancia de la transparencia en el periodismo. Nos esforzamos por proporcionar
+                    información clara y accesible, permitiendo a nuestros lectores comprender el complejo mundo de
+                    las criptomonedas.&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;ui-card-value&quot;&gt;
+                &lt;h1&gt;Transparencia&lt;/h1&gt;
+                &lt;p&gt;Creemos en la importancia de la transparencia en el periodismo. Nos esforzamos por proporcionar
+                    información clara y accesible, permitiendo a nuestros lectores comprender el complejo mundo de
+                    las criptomonedas.&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;ui-card-value&quot;&gt;
+                &lt;h1&gt;Transparencia&lt;/h1&gt;
+                &lt;p&gt;Creemos en la importancia de la transparencia en el periodismo. Nos esforzamos por proporcionar
+                    información clara y accesible, permitiendo a nuestros lectores comprender el complejo mundo de
+                    las criptomonedas.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class&#x3D;&quot;ui-card-contact mt-5 p-4 px-5 pb-5 pb-lg-4&quot;&gt;
+            &lt;h1&gt;Contacto&lt;/h1&gt;
+            &lt;p&gt;We welcome tips, story suggestions, and feedback from our readers.&lt;/p&gt;
+
+            &lt;div class&#x3D;&quot;ui-card-contact-item d-flex flex-column align-items-center gap-6 mt-4 pt-2 pt-lg-0&quot;&gt;
+                &lt;div class&#x3D;&quot;contact-item-img&quot;&gt;
+                    &lt;svg class&#x3D;&quot;w-8 h-8 text-blue-800&quot; fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 24 24&quot;&gt;
+                        &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; stroke-width&#x3D;&quot;2&quot;
+                            d&#x3D;&quot;M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z&quot;&gt;
+                        &lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/div&gt;
+                &lt;h1 class&#x3D;&quot;m-0&quot;&gt;Email&lt;/h1&gt;
+                &lt;p class&#x3D;&quot;m-0&quot;&gt;contacto&amp;#64;finanzasalcorreo.com&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis-network.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="ui-main-container py-5">    <section class="container">        <div class="ui-main-content-section pb-2">            <h1 class="text-center">Sobre la app</h1>            <p class="text-center">Creado en 2025, Finanzas al correo nace de la necesidad de proporcionar                información                clara y precisa sobre el mundo de las criptomonedas. Nuestro equipo de expertos se dedica a                analizar las tendencias del mercado, ofrecer reportes detallados y brindar asesoramiento confiable                para ayudar a nuestros lectores a tomar decisiones informadas en este dinámico sector financiero.            </p>        </div>        <div class="ui-card-mission mt-4 p-4 px-5 pb-5 pb-lg-4">            <h1 class="text-center">La Misión</h1>            <div class="row">                <div class="col-12 col-lg-7">                    <p class="description my-3">We believe that informed decision-making requires access to                        reliable, comprehensive information. In the fast-moving world of cryptocurrency,                        misinformation can lead to significant financial losses and missed opportunities.                        <br>                        <br>                        Our commitment is to cut through the noise and deliver the insights that matter most to                        investors, developers, and enthusiasts in the cryptocurrency ecosystem.                    </p>                </div>                <div class="col-12 col-lg-5">                    <div class="h-100 d-flex align-items-center justify-content-center">                        <div class="card-quote">                            <h1>"Empoderando a la comunidad cripto a través del periodismo transparente, preciso y                                educativo."</h1>                            <p>— Junta Editorial de CryptoPulse</p>                        </div>                    </div>                </div>            </div>        </div>        <div class="ui-main-content-section pb-2 mt-5">            <h1 class="text-center">Our Core Values</h1>            <p class="text-center">These principles guide every article we publish and every analysis we conduct.            </p>        </div>        <div class="d-flex align-items-center flex-row flex-wrap justify-content-center gap-16">            <div class="ui-card-value">                <h1>Transparencia</h1>                <p>Creemos en la importancia de la transparencia en el periodismo. Nos esforzamos por proporcionar                    información clara y accesible, permitiendo a nuestros lectores comprender el complejo mundo de                    las criptomonedas.</p>            </div>            <div class="ui-card-value">                <h1>Transparencia</h1>                <p>Creemos en la importancia de la transparencia en el periodismo. Nos esforzamos por proporcionar                    información clara y accesible, permitiendo a nuestros lectores comprender el complejo mundo de                    las criptomonedas.</p>            </div>            <div class="ui-card-value">                <h1>Transparencia</h1>                <p>Creemos en la importancia de la transparencia en el periodismo. Nos esforzamos por proporcionar                    información clara y accesible, permitiendo a nuestros lectores comprender el complejo mundo de                    las criptomonedas.</p>            </div>        </div>        <div class="ui-card-contact mt-5 p-4 px-5 pb-5 pb-lg-4">            <h1>Contacto</h1>            <p>We welcome tips, story suggestions, and feedback from our readers.</p>            <div class="ui-card-contact-item d-flex flex-column align-items-center gap-6 mt-4 pt-2 pt-lg-0">                <div class="contact-item-img">                    <svg class="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">                        </path>                    </svg>                </div>                <h1 class="m-0">Email</h1>                <p class="m-0">contacto&#64;finanzasalcorreo.com</p>            </div>        </div>    </section></main></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnalysisComponent', 'selector': 'app-analysis'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReportDetailsComponent', 'selector': 'app-report-details'},{'name': 'TemplatePlaygroundComponent', 'selector': 'template-playground-root'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AboutComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AboutComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

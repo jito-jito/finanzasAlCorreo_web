@@ -1,0 +1,653 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>finanzas-al-correo-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+          <script>
+              // --- Iframe navigation tracking for Template Playground ---
+              function sendCurrentUrlToParent() {
+                  if (window.parent && window.parent !== window) {
+                      window.parent.postMessage({
+                          type: 'compodoc-iframe-navigate',
+                          url: window.location.pathname + window.location.hash
+                      }, '*');
+                  }
+              }
+              window.addEventListener('hashchange', sendCurrentUrlToParent, false);
+              window.addEventListener('popstate', sendCurrentUrlToParent, false);
+              window.addEventListener('DOMContentLoaded', sendCurrentUrlToParent, false);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">finanzas-al-correo-web documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#appConfig" title="src/app/app.config.ts" ><b>appConfig</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEFAULT_ANALYSIS_DATA" title="src/app/modules/analysis/models/analysis.model.ts" ><b>DEFAULT_ANALYSIS_DATA</b>&nbsp;&nbsp;&nbsp;(src/.../analysis.model.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMAIL_RULES" title="src/app/shared/validators/email.validator.ts" ><b>EMAIL_RULES</b>&nbsp;&nbsp;&nbsp;(src/.../email.validator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Handlebars" title="documentation/template-playground/hbs-render.service.ts" ><b>Handlebars</b>&nbsp;&nbsp;&nbsp;(documentation/.../hbs-render.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JSZip" title="documentation/template-playground/zip-export.service.ts" ><b>JSZip</b>&nbsp;&nbsp;&nbsp;(documentation/.../zip-export.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MOCK_DAILY_REPORT" title="src/app/modules/home/models/home.model.ts" ><b>MOCK_DAILY_REPORT</b>&nbsp;&nbsp;&nbsp;(src/.../home.model.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MOCK_REPORT_DETAILS" title="src/app/modules/report-details/models/report-details.model.ts" ><b>MOCK_REPORT_DETAILS</b>&nbsp;&nbsp;&nbsp;(src/.../report-details.model.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#monaco" title="documentation/template-playground/template-editor.service.ts" ><b>monaco</b>&nbsp;&nbsp;&nbsp;(documentation/.../template-editor.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PASSWORD_RULES" title="src/app/shared/validators/password.validator.ts" ><b>PASSWORD_RULES</b>&nbsp;&nbsp;&nbsp;(src/.../password.validator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#routes" title="src/app/app.routes.ts" ><b>routes</b>&nbsp;&nbsp;&nbsp;(src/.../app.routes.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/app.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appConfig"></a>
+                    <span class="name">
+                        <span ><b>appConfig</b></span>
+                        <a href="#appConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ApplicationConfig</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideRouter(routes),
+    { provide: LOCALE_ID, useValue: &#x27;es&#x27; }
+  ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/modules/analysis/models/analysis.model.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_ANALYSIS_DATA"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_ANALYSIS_DATA</b></span>
+                        <a href="#DEFAULT_ANALYSIS_DATA"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/AnalysisData.html" target="_self" >AnalysisData</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    metricsItems: [
+        {
+            id: &#x27;1&#x27;,
+            title: &#x27;(All-Time High) / Drawdown&#x27;,
+            summary: &#x27;85%&#x27;,
+            description: &#x27;Indica cuánto ha caído el precio desde su punto máximo histórico.&#x27;,
+        },
+        {
+            id: &#x27;2&#x27;,
+            title: &#x27;RSI (Relative Strength Index)&#x27;,
+            summary: &#x27;70&#x27;,
+            description: &#x27;Identifica condiciones de sobrecompra o sobreventa.&#x27;,
+        },
+        {
+            id: &#x27;3&#x27;,
+            title: &#x27;Ratio Volumen / Market Cap (Vol/MC)&#x27;,
+            summary: &#x27;Alta Liquidez&#x27;,
+            description: &#x27;Esta métrica revela si el interés en la moneda es real o artificial.&#x27;,
+        },
+    ],
+    analysisItems: [
+        {
+            id: &#x27;15&#x27;,
+            type: &#x27;Análisis Técnico&#x27;,
+            title: &#x27;Análisis del Mercado Actual&#x27;,
+            content: &#x27;El mercado muestra señales mixtas con una volatilidad moderada. Los inversores deben estar atentos a las tendencias emergentes y considerar estrategias de diversificación.&#x27;,
+            date: &#x27;2024-04-01&#x27;,
+            likes: 120,
+            dislikes: 10,
+        },
+        {
+            id: &#x27;20&#x27;,
+            type: &#x27;Análisis Fundamental&#x27;,
+            title: &#x27;Perspectivas a Largo Plazo&#x27;,
+            content: &#x27;A pesar de las fluctuaciones a corto plazo, las perspectivas a largo plazo siguen siendo optimistas debido a la adopción creciente y los desarrollos tecnológicos en el sector.&#x27;,
+            date: &#x27;2024-05-15&#x27;,
+            likes: 200,
+            dislikes: 15,
+        },
+    ],
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/validators/email.validator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMAIL_RULES"></a>
+                    <span class="name">
+                        <span ><b>EMAIL_RULES</b></span>
+                        <a href="#EMAIL_RULES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    REGEX_EMAIL: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>documentation/template-playground/hbs-render.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Handlebars"></a>
+                    <span class="name">
+                        <span ><b>Handlebars</b></span>
+                        <a href="#Handlebars"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>documentation/template-playground/zip-export.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JSZip"></a>
+                    <span class="name">
+                        <span ><b>JSZip</b></span>
+                        <a href="#JSZip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/modules/home/models/home.model.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MOCK_DAILY_REPORT"></a>
+                    <span class="name">
+                        <span ><b>MOCK_DAILY_REPORT</b></span>
+                        <a href="#MOCK_DAILY_REPORT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DailyReport.html" target="_self" >DailyReport</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    date: new Date(),
+    BTCPrice: 45000,
+    ETHPrice: 3000,
+    reports: [
+        {
+            id: &#x27;1&#x27;,
+            title: &#x27;Análisis del mercado de criptomonedas&#x27;,
+            date: &#x27;2024-06-01&#x27;,
+            content: &#x27;El mercado de criptomonedas ha mostrado una tendencia alcista en las últimas semanas...&#x27;,
+            likes: 120,
+            dislikes: 5
+        },
+        {
+            id: &#x27;2&#x27;,
+            title: &#x27;Impacto de las regulaciones en las criptomonedas&#x27;,
+            date: &#x27;2024-06-02&#x27;,
+            content: &#x27;Las nuevas regulaciones gubernamentales están afectando el valor de las criptomonedas...&#x27;,
+            likes: 85,
+            dislikes: 10
+        }
+    ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/modules/report-details/models/report-details.model.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MOCK_REPORT_DETAILS"></a>
+                    <span class="name">
+                        <span ><b>MOCK_REPORT_DETAILS</b></span>
+                        <a href="#MOCK_REPORT_DETAILS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ReportDetails.html" target="_self" >ReportDetails[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        id: &#x27;1&#x27;,
+        type: &#x27;Análisis de mercado&#x27;,
+        title: &#x27;Análisis del mercado de criptomonedas&#x27;,
+        date: &#x27;2024-06-01&#x27;,
+        content: &#x27;El mercado de criptomonedas ha mostrado una tendencia alcista en las últimas semanas...&#x27;,
+        likes: 120,
+        dislikes: 5,
+        source: &#x27;Fuente: Informe Financiero Diario&#x27;
+    },
+    {
+        id: &#x27;2&#x27;,
+        type: &#x27;Análisis de mercado&#x27;,
+        title: &#x27;Impacto de las regulaciones en las criptomonedas&#x27;,
+        date: &#x27;2024-06-02&#x27;,
+        content: &#x27;Las nuevas regulaciones gubernamentales están afectando el valor de las criptomonedas...&#x27;,
+        likes: 85,
+        dislikes: 10,
+        source: &#x27;Fuente: Informe Financiero Diario&#x27;
+    },
+    {
+        id: &#x27;20&#x27;,
+        type: &#x27;Análisis Fundamental&#x27;,
+        title: &#x27;Perspectivas a Largo Plazo&#x27;,
+        content: &#x27;A pesar de las fluctuaciones a corto plazo, las perspectivas a largo plazo siguen siendo optimistas debido a la adopción creciente y los desarrollos tecnológicos en el sector.&#x27;,
+        date: &#x27;2024-05-15&#x27;,
+        likes: 200,
+        dislikes: 15,
+        source: &quot;Fuente: Informe Financiero Diario&quot;
+    },
+
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>documentation/template-playground/template-editor.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="monaco"></a>
+                    <span class="name">
+                        <span ><b>monaco</b></span>
+                        <a href="#monaco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/validators/password.validator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PASSWORD_RULES"></a>
+                    <span class="name">
+                        <span ><b>PASSWORD_RULES</b></span>
+                        <a href="#PASSWORD_RULES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    REGEX_PASSWORD: /^(?&#x3D;.*[A-Za-z])(?&#x3D;.*\d)[A-Za-z\d]{8,}$/,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/app.routes.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routes"></a>
+                    <span class="name">
+                        <span ><b>routes</b></span>
+                        <a href="#routes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Routes</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+        path: &#x27;&#x27;,
+        component: LayoutComponent,
+        children: [
+            {
+                path: &#x27;&#x27;,
+                loadComponent: () &#x3D;&gt; &quot;import(&#x27;./modules/home/home.component&#x27;).then(m &#x3D;&gt; m.HomeComponent)&quot;
+            },
+            {
+                path: &#x27;sobre-la-app&#x27;,
+                loadComponent: () &#x3D;&gt; &quot;import(&#x27;./modules/about/about.component&#x27;).then(m &#x3D;&gt; m.AboutComponent)&quot;
+            },
+            {
+                path: &#x27;analisis&#x27;,
+                loadComponent: () &#x3D;&gt; &quot;import(&#x27;./modules/analysis/analysis.component&#x27;).then(m &#x3D;&gt; m.AnalysisComponent)&quot;
+            },
+            {
+                path: &#x27;login&#x27;,
+                loadComponent: () &#x3D;&gt; &quot;import(&#x27;./modules/login/login.component&#x27;).then(m &#x3D;&gt; m.LoginComponent)&quot;
+            },
+            {
+                path: &#x27;registro&#x27;,
+                loadComponent: () &#x3D;&gt; &quot;import(&#x27;./modules/register/register.component&#x27;).then(m &#x3D;&gt; m.RegisterComponent)&quot;
+            },
+            {
+                path: &#x27;reporte/:reportId&#x27;,
+                loadComponent: () &#x3D;&gt; &quot;import(&#x27;./modules/report-details/report-details.component&#x27;).then(m &#x3D;&gt; m.ReportDetailsComponent)&quot;
+            }
+        ]
+    }
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
